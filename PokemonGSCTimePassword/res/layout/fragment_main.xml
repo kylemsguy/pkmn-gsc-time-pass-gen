@@ -28,10 +28,40 @@
 
         <Button
             android:id="@+id/tname_help"
+            style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="@string/question_mark"
-            android:onClick="submitAction" />
+            android:action="helpTname"
+            android:hint="@string/question_mark" />
     </LinearLayout>
+
+    <EditText
+        android:id="@+id/money"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/money"
+        android:inputType="number"
+        android:value="0" />
+
+    <EditText
+        android:id="@+id/trainer_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/trainer_id"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/passwd_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/passwd"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/question_mark"
+        android:onClick="submitAction" />
 
 </LinearLayout>

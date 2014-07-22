@@ -5,6 +5,10 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="trainer_name">Name of Trainer</string>
-    <string name="question_mark">?</string>
+    <string name="money">Money on Hand</string>
+    <string name="trainer_id">Trainer ID</string>
+    <string name="passwd">Password will appear here.</string>
+    <string name="question_mark">\?</string>
+    
 
 </resources>
