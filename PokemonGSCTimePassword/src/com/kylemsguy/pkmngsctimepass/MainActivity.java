@@ -31,8 +31,9 @@ public class MainActivity extends ActionBarActivity {
 
 	public void submitAction(View view) {
 		String name;
-		int cash;
-		int train_id;
+		int cash = 0;
+		int train_id = 0;
+		boolean error = false;
 		
 		int rawPasswd;
 
@@ -42,17 +43,26 @@ public class MainActivity extends ActionBarActivity {
 		EditText resultField = (EditText) findViewById(R.id.passwd_result);
 
 		name = nameField.getText().toString();
+		
+		if(name.length() == 0){
+			nameField.setError("Invalid Input");
+		}
+		
 		try {
 			cash = Integer.parseInt(moneyField.getText().toString());
 		} catch (NumberFormatException e) {
 			moneyField.setError("Invalid Input");
-			return;
+			error = true;
 		}
 		
 		try {
 			train_id = Integer.parseInt(idField.getText().toString());
 		} catch (NumberFormatException e) {
 			idField.setError("Invalid Input");
+			error = true;
+		}
+		
+		if(error){
 			return;
 		}
 
