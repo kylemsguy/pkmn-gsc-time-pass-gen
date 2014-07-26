@@ -3,6 +3,7 @@ package com.kylemsguy.pkmngsctimepass;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -24,9 +25,22 @@ public class MainActivity extends ActionBarActivity {
 					.add(R.id.container, new PlaceholderFragment()).commit();
 		}
 	}
-	
-	public void helpTname(View view){
-		
+
+	public void showNotifDialog(String contents) {
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setMessage(contents);
+		builder.setPositiveButton("OK", null);
+		builder.setCancelable(true);
+		AlertDialog dialog = builder.create();
+		dialog.show();
+	}
+
+	public void helpTname(View view) {
+		String text = "Special Characters:\n" + "To type Pk, enter +.\n"
+				+ "To type Mn, enter =\n" + "\n"
+				+ "Example: IAmAPkMn => IAmA+=";
+
+		showNotifDialog(text);
 	}
 
 	public void submitAction(View view) {
@@ -34,7 +48,7 @@ public class MainActivity extends ActionBarActivity {
 		int cash = 0;
 		int train_id = 0;
 		boolean error = false;
-		
+
 		int rawPasswd;
 
 		EditText nameField = (EditText) findViewById(R.id.trainer_name);
@@ -43,26 +57,26 @@ public class MainActivity extends ActionBarActivity {
 		EditText resultField = (EditText) findViewById(R.id.passwd_result);
 
 		name = nameField.getText().toString();
-		
-		if(name.length() == 0){
+
+		if (name.length() == 0) {
 			nameField.setError("Invalid Input");
 		}
-		
+
 		try {
 			cash = Integer.parseInt(moneyField.getText().toString());
 		} catch (NumberFormatException e) {
 			moneyField.setError("Invalid Input");
 			error = true;
 		}
-		
+
 		try {
 			train_id = Integer.parseInt(idField.getText().toString());
 		} catch (NumberFormatException e) {
 			idField.setError("Invalid Input");
 			error = true;
 		}
-		
-		if(error){
+
+		if (error) {
 			return;
 		}
 
@@ -72,14 +86,14 @@ public class MainActivity extends ActionBarActivity {
 			nameField.setError("Invalid character in Trainer Name");
 			return;
 		}
-		
+
 		StringBuffer passwd = new StringBuffer();
-		for(int i = 0; i < 4 - Math.log10(rawPasswd); i++){
+		for (int i = 0; i < 4 - Math.log10(rawPasswd); i++) {
 			passwd.append("0");
 		}
-		
+
 		passwd.append(Integer.toString(rawPasswd));
-		
+
 		resultField.setText(passwd.toString());
 	}
 

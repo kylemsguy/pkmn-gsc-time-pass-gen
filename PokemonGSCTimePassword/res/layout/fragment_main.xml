@@ -14,26 +14,30 @@
         android:layout_height="wrap_content"
         android:text="@string/hello_world" />
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="0dp"
         android:orientation="horizontal" >
 
         <EditText
             android:id="@+id/trainer_name"
-            android:layout_width="match_parent"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
             android:hint="@string/trainer_name"
             android:inputType="text" />
 
         <Button
             android:id="@+id/tname_help"
             style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
+            android:layout_width="30dp"
             android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
             android:action="helpTname"
             android:hint="@string/question_mark" />
-    </LinearLayout>
+    </RelativeLayout>
 
     <EditText
         android:id="@+id/money"
@@ -50,18 +54,28 @@
         android:hint="@string/trainer_id"
         android:inputType="number" />
 
+    <View
+        android:id="@+id/space1"
+        android:layout_width="1dp"
+        android:layout_height="20dp" />
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/submit"
+        android:onClick="submitAction" />
+
+    <View
+        android:id="@+id/space2"
+        android:layout_width="1dp"
+        android:layout_height="50dp" />
+
     <EditText
         android:id="@+id/passwd_result"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/passwd"
         android:inputType="number" />
-
-    <Button
-        android:id="@+id/submit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="@string/question_mark"
-        android:onClick="submitAction" />
 
 </LinearLayout>
