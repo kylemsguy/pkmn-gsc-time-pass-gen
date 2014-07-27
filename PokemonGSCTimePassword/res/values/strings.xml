@@ -10,5 +10,6 @@
     <string name="passwd">Password will appear here.</string>
     <string name="submit">Submit</string>
     <string name="question_mark">\?</string>
+    <string name="help">Help</string>
 
 </resources>

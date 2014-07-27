@@ -4,9 +4,9 @@
     tools:context="com.kylemsguy.pokemongsctimepassword.MainActivity" >
 
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/help"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
+        android:title="@string/help"
         app:showAsAction="never"/>
 
 </menu>
